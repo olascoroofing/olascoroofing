@@ -351,6 +351,7 @@ const CONFIG = {
   whatsapp: "2348033386254",   /* digits only, no + */
   email: "olascoroofing@gmail.com",
   facebook: "",                /* paste your full Facebook page link */
+  addresses: ["Plot 5, Augusto Estate, Oko Oba, Agege, Lagos", "Branch office: Divine Zone, Ladegboye, Ijede Road, Ikorodu, Lagos"],
   hours: "",
   area: "",
   tagline: "",
@@ -465,6 +466,7 @@ const li=(k,h)=>`<li>${svg(IC[k])}<span>${h}</span></li>`;
 const rows=[];
 if(C.phone) rows.push(li("phone",`<a href="${tel}">${esc(C.phone)}</a>`));
 if(C.email) rows.push(li("mail",`<a href="mailto:${esc(C.email)}">${esc(C.email)}</a>`));
+C.addresses.forEach(a=>rows.push(li("pin",esc(a))));
 if(C.hours) rows.push(li("clock",esc(C.hours)));
 if(C.area) rows.push(li("pin","Serving "+esc(C.area)));
 if(C.facebook) rows.push(li("fb",`<a href="${esc(C.facebook)}" target="_blank" rel="noopener">Facebook</a>`));
@@ -481,6 +483,7 @@ const fi=[];
 if(C.phone) fi.push(`<a href="${tel}">${esc(C.phone)}</a>`);
 if(C.email) fi.push(`<a href="mailto:${esc(C.email)}">${esc(C.email)}</a>`);
 if(C.facebook) fi.push(`<a href="${esc(C.facebook)}" target="_blank" rel="noopener">Facebook</a>`);
+C.addresses.forEach(a=>fi.push(esc(a)));
 $("#footInfo").innerHTML=fi.join(" &middot; ");
 $("#yr").textContent=new Date().getFullYear();
 
@@ -523,6 +526,7 @@ if(C.phone) ld.telephone=C.phone;
 if(C.email) ld.email=C.email;
 if(C.area) ld.areaServed=C.area;
 if(C.hours) ld.openingHours=C.hours;
+if(C.addresses.length) ld.address=C.addresses.map(a=>({"@type":"PostalAddress","streetAddress":a,"addressCountry":"NG"}));
 if(C.facebook) ld.sameAs=[C.facebook];
 if(C.siteUrl){ld.url=C.siteUrl;ld.image=C.siteUrl+"logo.svg"}
 $("#ld").textContent=JSON.stringify(ld);
