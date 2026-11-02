@@ -127,6 +127,13 @@ footer a{color:#fff}
  footer .wrap{flex-direction:row;justify-content:space-between;align-items:center}
  .bar,.float{display:none}
 }
+.hero-grid{display:grid;gap:1.5rem;align-items:center}
+.hero-art{max-width:300px;width:70%;justify-self:center}
+.hero-art svg{width:100%;height:auto;display:block}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr;gap:3rem}.hero-art{max-width:420px;width:100%}}
+.art{aspect-ratio:16/10;border-radius:12px;overflow:hidden;margin-bottom:1rem;background:#eaf1f9}
+.art svg{width:100%;height:100%;display:block}
+.tile .art-svg{position:absolute;inset:0;width:100%;height:100%;transform:none;stroke:none;z-index:0}
 .lgbox{display:inline-block;background:#fff;border-radius:8px;padding:3px 8px;line-height:0}
 .lgbox svg{height:44px;width:auto;display:block}
 footer .lgbox svg{height:40px}
@@ -166,7 +173,8 @@ footer .lgbox svg{height:40px}
 
 <main id="top">
 <section class="hero">
-  <div class="wrap">
+  <div class="wrap hero-grid">
+  <div>
     <p class="tag" id="tagline" hidden></p>
     <h1>Roofing for your whole home.</h1>
     <p>Book a roofing job, or buy the materials. We install, repair and supply for every part of the house, from roof to windows and doors.</p>
@@ -179,6 +187,25 @@ footer .lgbox svg{height:40px}
       </a>
     </div>
     <div class="meta" id="heroMeta"></div>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+      <rect x="282" y="62" width="26" height="62" fill="#13315c" stroke="#F08A24" stroke-width="3"/>
+      <polygon points="50,170 200,40 350,170" fill="#F08A24"/>
+      <polygon points="66,170 200,56 334,170" fill="#d87413"/>
+      <rect x="82" y="168" width="236" height="132" fill="#1d4a7f"/>
+      <rect x="112" y="196" width="62" height="62" fill="#e8f1fb" stroke="#e8f1fb" stroke-width="4"/>
+      <line x1="143" y1="196" x2="143" y2="258" stroke="#1d4a7f" stroke-width="4"/>
+      <line x1="112" y1="227" x2="174" y2="227" stroke="#1d4a7f" stroke-width="4"/>
+      <rect x="226" y="196" width="62" height="62" fill="#e8f1fb" stroke="#e8f1fb" stroke-width="4"/>
+      <line x1="257" y1="196" x2="257" y2="258" stroke="#1d4a7f" stroke-width="4"/>
+      <line x1="226" y1="227" x2="288" y2="227" stroke="#1d4a7f" stroke-width="4"/>
+      <rect x="170" y="238" width="44" height="62" fill="#0B2545" stroke="#F08A24" stroke-width="4"/>
+      <circle cx="206" cy="270" r="2.5" fill="#F08A24"/>
+      <circle cx="200" cy="40" r="7" fill="#e8f1fb" stroke="#0B2545" stroke-width="2"/>
+      <rect x="40" y="298" width="320" height="6" rx="3" fill="#F08A24"/>
+    </svg>
+  </div>
   </div>
 </section>
 
@@ -303,7 +330,7 @@ footer .lgbox svg{height:40px}
 const CONFIG = {
   phone: "0803 338 6254",
   whatsapp: "2348033386254",   /* digits only, no + */
-  email: "olayunbosunsoliu65@gmail.com",
+  email: "olascoroofing@gmail.com",
   facebook: "",                /* paste your full Facebook page link */
   hours: "",
   area: "",
@@ -364,6 +391,25 @@ const IC = {
   fb:'<path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/>'
 };
 
+const ART={
+home:'<svg class="art-svg" viewBox="0 0 240 150" aria-hidden="true"><rect width="240" height="150" fill="#eaf1f9"/><polygon points="40,78 120,28 200,78" fill="#F08A24"/><rect x="58" y="78" width="124" height="60" fill="#0B2545"/><rect x="98" y="102" width="28" height="36" fill="#e8f1fb"/><rect x="70" y="96" width="18" height="18" fill="#e8f1fb"/><rect x="152" y="96" width="18" height="18" fill="#e8f1fb"/></svg>',
+tool:'<svg class="art-svg" viewBox="0 0 240 150" aria-hidden="true"><rect width="240" height="150" fill="#eaf1f9"/><polygon points="30,120 120,40 210,120" fill="#0B2545"/><rect x="100" y="84" width="40" height="24" fill="#F08A24" stroke="#ffffff" stroke-width="2" stroke-dasharray="4 3"/><line x1="170" y1="30" x2="200" y2="60" stroke="#F08A24" stroke-width="8" stroke-linecap="round"/><circle cx="168" cy="28" r="10" fill="#F08A24"/></svg>',
+drop:'<svg class="art-svg" viewBox="0 0 240 150" aria-hidden="true"><rect width="240" height="150" fill="#eaf1f9"/><rect x="30" y="60" width="180" height="18" rx="4" fill="#1d4a7f"/><rect x="30" y="80" width="180" height="18" rx="4" fill="#F08A24"/><rect x="30" y="100" width="180" height="18" rx="4" fill="#0B2545"/><circle cx="70" cy="34" r="7" fill="#5fb3e6"/><circle cx="120" cy="24" r="7" fill="#5fb3e6"/><circle cx="170" cy="36" r="7" fill="#5fb3e6"/></svg>',
+search:'<svg class="art-svg" viewBox="0 0 240 150" aria-hidden="true"><rect width="240" height="150" fill="#eaf1f9"/><polygon points="20,118 110,44 200,118" fill="#0B2545"/><circle cx="150" cy="86" r="24" fill="#cfe3f5" stroke="#F08A24" stroke-width="8"/><line x1="168" y1="104" x2="190" y2="126" stroke="#F08A24" stroke-width="9" stroke-linecap="round"/></svg>',
+layers:'<svg class="art-svg" viewBox="0 0 240 150" aria-hidden="true"><defs><pattern id="tilepat" width="32" height="26" patternUnits="userSpaceOnUse"><rect width="30" height="22" rx="6" fill="#0B2545"/></pattern></defs><rect width="240" height="150" fill="#eaf1f9"/><rect x="30" y="30" width="180" height="90" fill="url(#tilepat)"/><rect x="30" y="118" width="180" height="8" rx="3" fill="#F08A24"/></svg>',
+window:'<svg class="art-svg" viewBox="0 0 240 150" aria-hidden="true"><rect width="240" height="150" fill="#eaf1f9"/><rect x="36" y="18" width="168" height="124" fill="#1d4a7f"/><rect x="52" y="34" width="44" height="40" fill="#e8f1fb" stroke="#F08A24" stroke-width="4"/><rect x="144" y="34" width="44" height="40" fill="#e8f1fb" stroke="#F08A24" stroke-width="4"/><rect x="52" y="90" width="44" height="30" fill="#e8f1fb" stroke="#F08A24" stroke-width="4"/><rect x="144" y="90" width="44" height="30" fill="#e8f1fb" stroke="#F08A24" stroke-width="4"/><rect x="105" y="96" width="30" height="46" fill="#F08A24"/></svg>',
+door:'<svg class="art-svg" viewBox="0 0 240 150" aria-hidden="true"><rect width="240" height="150" fill="#eaf1f9"/><rect x="70" y="16" width="100" height="126" fill="#0B2545"/><rect x="82" y="28" width="76" height="62" fill="#cfe3f5"/><rect x="82" y="98" width="76" height="34" fill="#13315c"/><circle cx="146" cy="100" r="4" fill="#F08A24"/></svg>',
+rail:'<svg class="art-svg" viewBox="0 0 240 150" aria-hidden="true"><rect width="240" height="150" fill="#eaf1f9"/><rect x="20" y="50" width="200" height="6" fill="#F08A24"/><line x1="30" y1="56" x2="30" y2="116" stroke="#0B2545" stroke-width="3"/><line x1="45" y1="56" x2="45" y2="116" stroke="#0B2545" stroke-width="3"/><line x1="60" y1="56" x2="60" y2="116" stroke="#0B2545" stroke-width="3"/><line x1="75" y1="56" x2="75" y2="116" stroke="#0B2545" stroke-width="3"/><line x1="90" y1="56" x2="90" y2="116" stroke="#0B2545" stroke-width="3"/><line x1="105" y1="56" x2="105" y2="116" stroke="#0B2545" stroke-width="3"/><line x1="120" y1="56" x2="120" y2="116" stroke="#0B2545" stroke-width="3"/><line x1="135" y1="56" x2="135" y2="116" stroke="#0B2545" stroke-width="3"/><line x1="150" y1="56" x2="150" y2="116" stroke="#0B2545" stroke-width="3"/><line x1="165" y1="56" x2="165" y2="116" stroke="#0B2545" stroke-width="3"/><line x1="180" y1="56" x2="180" y2="116" stroke="#0B2545" stroke-width="3"/><line x1="195" y1="56" x2="195" y2="116" stroke="#0B2545" stroke-width="3"/><line x1="210" y1="56" x2="210" y2="116" stroke="#0B2545" stroke-width="3"/><rect x="20" y="116" width="200" height="10" fill="#0B2545"/></svg>',
+room:'<svg class="art-svg" viewBox="0 0 240 150" aria-hidden="true"><rect width="240" height="150" fill="#eaf1f9"/><rect x="20" y="20" width="200" height="110" fill="#ffffff" stroke="#0B2545" stroke-width="4"/><rect x="20" y="112" width="200" height="18" fill="#1d4a7f"/><rect x="40" y="40" width="60" height="50" fill="#cfe3f5" stroke="#0B2545" stroke-width="3"/><rect x="125" y="78" width="70" height="22" rx="6" fill="#F08A24"/><rect x="125" y="64" width="70" height="16" rx="6" fill="#d87413"/><line x1="170" y1="20" x2="170" y2="36" stroke="#0B2545" stroke-width="3"/><circle cx="170" cy="42" r="7" fill="#F08A24"/></svg>',
+building:'<svg class="art-svg" viewBox="0 0 240 150" aria-hidden="true"><rect width="240" height="150" fill="#eaf1f9"/><rect x="30" y="22" width="180" height="10" fill="#0B2545"/><rect x="40" y="32" width="160" height="96" fill="#1d4a7f"/><rect x="55" y="50" width="30" height="28" fill="#e8f1fb"/><rect x="155" y="50" width="30" height="28" fill="#e8f1fb"/><rect x="55" y="92" width="30" height="20" fill="#e8f1fb"/><rect x="155" y="92" width="30" height="20" fill="#e8f1fb"/><rect x="100" y="96" width="40" height="32" fill="#F08A24"/><rect x="20" y="128" width="200" height="6" fill="#F08A24"/></svg>'
+};
+const PHOTOS={"Roof installation":"roof-installation-1.jpg","Roof repair":"roof-repair-1.jpg","Metal and tile roofing":"metal-tile-roof-1.jpg","Exterior building work":"exterior-building-1.jpg"};
+const GALLERY=[
+{s:"roof-installation-1.jpg",c:"Roof installation"},{s:"roof-installation-2.jpg",c:"Roof installation"},{s:"roof-installation-3.jpg",c:"Roof installation"},
+{s:"roof-repair-1.jpg",c:"Roof repair"},
+{s:"metal-tile-roof-1.jpg",c:"Metal and tile roofing"},{s:"metal-tile-roof-2.jpg",c:"Metal and tile roofing"},{s:"metal-tile-roof-3.jpg",c:"Metal and tile roofing"},
+{s:"exterior-building-1.jpg",c:"Exterior building work"},{s:"exterior-building-2.jpg",c:"Exterior building work"},{s:"exterior-building-3.jpg",c:"Exterior building work"}
+];
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const C=CONFIG;
 const wa=(C.whatsapp||"").replace(/\D/g,"");
@@ -374,7 +420,7 @@ const waLink=text=>"https://wa.me/"+wa+(text?"?text="+encodeURIComponent(text):"
 
 /* services */
 SERVICE_GROUPS.forEach(g=>{
-  $("#"+g.id).innerHTML=g.items.map(s=>`<article class="card fade"><div class="ico">${svg(ICONS[s.i])}</div><h3>${esc(s.n)}</h3><p>${esc(s.d)}</p></article>`).join("");
+  $("#"+g.id).innerHTML=g.items.map(s=>`<article class="card fade"><div class="art">${PHOTOS[s.n]?`<img src="${PHOTOS[s.n]}" alt="${esc(s.n)}" loading="lazy">`:(ART[s.i]||"")}</div><h3>${esc(s.n)}</h3><p>${esc(s.d)}</p></article>`).join("");
 });
 
 /* materials: each one opens WhatsApp with that product named */
@@ -386,7 +432,7 @@ if(!wa) $("#materials").hidden=true;
 
 /* gallery: placeholder frames for roofing and window work */
 const galItems=[...SERVICE_GROUPS[0].items.slice(0,3),...SERVICE_GROUPS[1].items.slice(0,3)];
-$("#gal").innerHTML=galItems.map(s=>`<figure class="tile fade">${svg(ICONS[s.i])}<figcaption>${esc(s.n)}</figcaption></figure>`).join("");
+$("#gal").innerHTML=GALLERY.map(g=>`<figure class="tile fade"><img src="${g.s}" alt="${esc(g.c)}" loading="lazy"><figcaption>${esc(g.c)}</figcaption></figure>`).join("");
 
 /* header details */
 if(C.tagline){const t=$("#tagline");t.textContent=C.tagline;t.hidden=false}
